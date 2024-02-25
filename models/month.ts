@@ -4,6 +4,10 @@ import entradaSchema from "./entry";
 
 const mesSchema: Schema = new Schema<MES>(
   {
+    usuario: {
+      type: String,
+      required: true,
+    },
     mes: {
       type: String,
       required: true,
@@ -20,6 +24,8 @@ const mesSchema: Schema = new Schema<MES>(
   },
   { versionKey: false }
 );
+
+mesSchema.index({ usuario: 1, mes: 1, ano: 1 }, { unique: true });
 
 const Mes = model<MES>("Mes", mesSchema);
 

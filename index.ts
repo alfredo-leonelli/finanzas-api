@@ -19,8 +19,10 @@ mongoose
   });
 
 import { userRouter } from "./routes/userRoutes";
+import { monthRouter } from "./routes/monthRoutes";
 
 app.use("/api", userRouter);
+app.use("/api", monthRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

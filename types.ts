@@ -40,13 +40,14 @@ export interface ENTRADA {
   monto: number;
 }
 
-export interface MES {
-  mes: MESES;
-  ano: number;
-  registros: Array<ENTRADA>;
-}
-
 export interface USUARIO {
   username: string;
   password: string;
+}
+
+export interface MES {
+  usuario: string;
+  mes: MESES;
+  ano: number;
+  registros: Array<ENTRADA>;
 }
